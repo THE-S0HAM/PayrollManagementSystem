@@ -4,7 +4,7 @@ import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-    @Override
+    @Override // Add a new employee to the database
     public void addEmployee(Employee emp) {
         String sql = """
             INSERT INTO employee
@@ -32,7 +32,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         }
     }
 
-    @Override
+    @Override // Retrieve all active employees from the database
     public List<Employee> getAllEmployees() {
         List<Employee> list = new ArrayList<>();
         String sql = "SELECT * FROM employee WHERE status='ACTIVE'";
@@ -51,7 +51,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return list;
     }
 
-    @Override
+    @Override // Retrieve an employee by their ID
     public Employee getEmployeeById(int id) {
         String sql = "SELECT * FROM employee WHERE emp_id=? AND status='ACTIVE'";
 
@@ -71,7 +71,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return null;
     }
 
-    @Override
+    @Override // Update an existing employee's details
     public void updateEmployee(Employee emp) {
         String sql = """
             UPDATE employee 
@@ -99,7 +99,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         }
     }
 
-    @Override
+    @Override // Apply salary increment to an employee
     public void applyIncrement(int empId, double percent) {
         String sql = """
             UPDATE employee 
@@ -121,7 +121,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         }
     }
 
-    @Override
+    @Override // Deactivate an employee (soft delete)
     public void deactivateEmployee(int id) {
         String sql = "UPDATE employee SET status='INACTIVE' WHERE emp_id=?";
 
@@ -137,6 +137,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         }
     }
 
+    // this method maps a ResultSet row to an Employee object
     private Employee mapEmployee(ResultSet rs) throws SQLException {
         Employee e = new Employee();
         e.setEmpId(rs.getInt("emp_id"));

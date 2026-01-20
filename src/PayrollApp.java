@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class PayrollApp {
@@ -10,14 +9,14 @@ public class PayrollApp {
         PayrollService service = new PayrollService();
 
         while (true) {
-            System.out.println("\n--- Payroll Management System ---");
+            System.out.println("\n-------------------- Payroll Management System --------------------");
             System.out.println("1. Add Employee");
             System.out.println("2. View All Employees");
             System.out.println("3. View Employee By ID");
-            System.out.println("4. Update Employee");
+            System.out.println("4. Update Employee details");
             System.out.println("5. Apply Salary Increment");
-            System.out.println("6. Deactivate Employee");
-            System.out.println("7. Exit");
+            System.out.println("6. Remove Employee (Employee offboarding)");
+            System.out.println("7. Exit\n------------------------------------------------------------");
 
             System.out.print("Choose option: ");
             int choice = sc.nextInt();

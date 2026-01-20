@@ -1,6 +1,7 @@
 import java.util.List;
 
 public interface EmployeeDAO {
+    // CRUD Operations, this is the Data Access Object interface
 
     void addEmployee(Employee emp);
 
