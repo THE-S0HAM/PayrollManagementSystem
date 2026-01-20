@@ -19,6 +19,8 @@ public class Employee {
         this.status = "ACTIVE";
     }
 
+    // Getters and Setters methods
+
     public int getEmpId() { return empId; }
     public void setEmpId(int empId) { this.empId = empId; }
 
@@ -47,6 +49,7 @@ public class Employee {
     public void setStatus(String status) { this.status = status; }
 
     @Override
+    // To display employee details in a readable format
     public String toString() {
         return empId + " | " + name + " | " + department +
                 " | Basic: " + basicSalary +

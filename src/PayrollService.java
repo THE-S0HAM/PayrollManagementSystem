@@ -2,6 +2,7 @@ public class PayrollService {
 
     public void calculateSalary(Employee emp) {
 
+        // this method calculates the salary components
         double basic = emp.getBasicSalary();
         double hra = basic * 0.20;
         double da = basic * 0.10;
